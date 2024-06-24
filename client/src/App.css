@@ -1,0 +1,29 @@
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 0 8px rgba(0,0,0,.1);
+
+}
+
+#right {
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  width: auto; 
+  text-align: center;
+  cursor: pointer;
+}
+
+#right:hover {
+  background-color: pink;
+}
+
+.left,
+#right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}

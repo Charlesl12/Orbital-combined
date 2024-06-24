@@ -1,0 +1,23 @@
+h1 {
+    display: flex;
+    color: #1e6575;
+    justify-content: center;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.sidebar {
+    padding-top: 100px;
+    width: 25%;
+}
+
+.content {
+    width: 75%;
+    padding: 20px;
+    text-align: left;
+}
