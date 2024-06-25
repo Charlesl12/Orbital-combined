@@ -3,7 +3,7 @@ const poolDB = require("../z-localhostDB");
 const supabase = require("../supabaseClient");
 const authorization = require("../joint/authorization");
 
-router.get("/", authorization, async (request, response) => {
+router.get("/*", authorization, async (request, response) => {
     try {
         // const user = await poolDB.query("SELECT user_name FROM users WHERE user_id = $1", [request.user.id]);
         // response.json(user.rows[0]);

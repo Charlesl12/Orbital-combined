@@ -1,6 +1,8 @@
 import React,{ Fragment, useState, useEffect } from "react";
 import "./App.css";
 import {Routes, Route, Navigate, useNavigate} from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Homepage from "./Homepage";
 import Register from "./Register";
 import Login from "./Login";
@@ -41,6 +43,7 @@ function App() {
     e.preventDefault();
     localStorage.removeItem("token");
     setAut(false);
+    toast.success("Logged out successfully");
     navigate("/");
   };
 
@@ -57,7 +60,6 @@ function App() {
       </button>
     );
   }
-
 
   return (
     <>      

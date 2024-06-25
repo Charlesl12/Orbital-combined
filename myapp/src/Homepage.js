@@ -27,13 +27,6 @@ export default function Homepage({ setAut }) {
         getName();
     }, []);
 
-    const logout = (e) => {
-        e.preventDefault();
-        localStorage.removeItem("token");
-        setAut(false);
-        toast.success("Logged out successfully");
-    };
-
     return (
         <>
             <h1>Homepage</h1>
