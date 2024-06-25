@@ -66,7 +66,7 @@ export default function UsefulLink() {
                             <a 
                             href={link.url} 
                             target="_blank"
-                            style={{color: "#ff5138"}}>{link.name}</a> {link. description}
+                            style={{color: "#ff5138"}}>{link.name}</a> {link.description}
                         </li>
                     ))}
                 </ol>                     
