@@ -34,7 +34,20 @@ export default function GradTracker() {
             setIsSelectionSaved(true); 
         }
     }, []); 
-
+    const renderSelectedComponent = () => {
+        switch(selectedOption) {
+            case "CS":
+                return <ComSciMods />;
+            case "BZA":
+                return <BzaMods />;
+            case "INFO SYS":
+                return <InfoSysMods />;
+            case "INFO SEC":
+                return <InfoSecMods />;
+            default:
+                return <h3>Please select an option</h3>;
+        }
+    };
 
     return (
     <>
@@ -78,7 +91,7 @@ export default function GradTracker() {
             <button onClick={saveSelection} className="btn btn-success">Save Selection</button>
             <button onClick={deleteAllLocalStorage} className="btn btn-danger">Delete All</button>
 
-            {BzaMods()}
+            {renderSelectedComponent()}
 
         </div>
         </div>

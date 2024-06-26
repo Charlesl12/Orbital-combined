@@ -39,7 +39,7 @@ const accordionData = [
         content: (<>
                     NOTE: this is just a sample roadmap. Please consult with your seniors or friends for the most accurate information.
                     <br/>
-                    The <span style={{color: " #FFC300 "}}>yellow</span> highlighted mods are 2nd major just replace them 
+                    The <span style={{color: "#8B8000"}}>yellow</span> highlighted mods are 2nd major just replace them 
                     ith UEs if you are not doing 2nd major.
                 </>),
         link: (<img src={bza} alt="BZA Roadmap"/>)

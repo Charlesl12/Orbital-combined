@@ -6,10 +6,11 @@ const cs = [
     {
         module: "University Pillar", // Unique Electives Module
         courses: uniPillar.map((mod) => ({ mod: mod.course, done: mod.done})),
+        links: "https://www.nus.edu.sg/registrar/academic-information-policies/undergraduate-students/general-education/list-of-courses-approved-under-the-ge-pillars",
     },
 
     {
-        module: "Interdisciplinary & Cross-Disciplinary Education ",
+        module: "Interdisciplinary & Cross-Disciplinary Education: go appendix B/C for more info ",
         courses: [
             {mod: "1st ID Mod", done: false},
             {mod: "2nd ID Mod", done: false},
@@ -33,6 +34,32 @@ const cs = [
         ],
     },
 
+    {
+        module: "Focus Area (Click me to refer to NUS website requirements)\
+                below is just a guide of FA choices\
+                or ATAP and take 4 FA mods + ensuring minimum 3 4k mods",
+        courses: [
+            {mod: "4k mod", done: false},
+            {mod: "4k mod", done: false},
+            {mod: "4k mod", done: false},
+            {mod: "3k mod", done: false},
+            {mod: "2k mod/3k mod", done: false},
+            {mod: "4MC mod/2 SIP to make 12MC", done: false}, 
+            {mod: "4MC mod/2 SIP to make 12MC", done: false},
+            {mod: "4MC mod/2 SIP to make 12MC", done: false},
+            
+        ],
+        links: "https://www.comp.nus.edu.sg/programmes/ug/focus/"
+    },
+
+    {
+        module: "Math",
+        courses: [
+            {mod: "MA1521", done: false, links: "https://nusmods.com/modules/MA1521/calculus-for-computing"},
+            {mod: "MA1522", done: false, links: "https://nusmods.com/courses/MA1522/linear-algebra-for-computing"},
+            {mod: "ST2334", done: false, links: "https://nusmods.com/courses/ST2334/probability-and-statistics"},
+        ],
+    },
 
     {
         module: "Unrestricted Elective - Poly Students auto exempted 4 UE", // Unique Electives Module
@@ -43,30 +70,30 @@ const cs = [
 ];
 export default function ComSciMods() {
 
-    const [state, setState] = useState(cs);
-    //const [courseDone, setCourseDone] = useState(false);
+    const [state, setState] = useState(() => {
+        const storedCs = JSON.parse(localStorage.getItem("cs"));
+        return storedCs ? storedCs : cs
+    });
+
+    useEffect(() => {
+        localStorage.setItem("cs", JSON.stringify(state));
+    }, [state]);
+
+
+    useEffect(() => {
+        const storedCs = JSON.parse(localStorage.getItem("cs"));
+        if (storedCs) {
+            setState(storedCs);
+        }
+    }, []);
 
     const onCompleteClick = (index, idx) => {
-        const updatedState = [...state];
-        updatedState[index].courses[idx].done = !updatedState[index].courses[idx].done;
-
-        const allDone = updatedState[index].courses.every((course) => course.done);
-        updatedState[index].completed = allDone;
-
-        setState(updatedState);
-        // saveToLocalStorage(updatedState);
+        setState((prevState) => {
+            const updatedState = [...prevState];
+            updatedState[index].courses[idx].done = !updatedState[index].courses[idx].done;
+            return updatedState;
+          });
     };
-
-    // useEffect(() => {
-    //     const storedCs = JSON.parse(localStorage.getItem("cs"));
-    //     if (storedCs) {
-    //         setState(storedCs);
-    //     }
-    // }, []);
-
-    // const saveToLocalStorage = (updatedState) => {
-    //     localStorage.setItem("cs", JSON.stringify(updatedState));
-    // };
 
 
     return(
@@ -79,22 +106,26 @@ export default function ComSciMods() {
                 </tr>
             </thead>
             <tbody>
-                {cs.map((category, index) => (
+                {state.map((category, index) => (
                     <React.Fragment key={index}>
                         <tr>
                             <td>
                                 <strong>
-                                    {category.module}
+                                    <a href = {category.links} target="_blank">
+                                        {typeof category.module === 'string' ? category.module : category.module}
+                                    </a>
                                 </strong>
                             </td>
                         </tr>
                         {category.courses.map((course, idx) => (
                             <tr key={idx}>
                                 <td style={course.done ? {backgroundColor: "green"} : {backgroundColor: "transparent"}}>
-                                    {course.mod}
+                                    <a href = {course.links} target="_blank">
+                                        {course.mod}
+                                    </a>
                                 </td>
                                 <td>
-                                    <button onClick={() => onCompleteClick(index, idx)}>
+                                    <button onClick={() => onCompleteClick(index, idx)} className="btn btn-primary">
                                     {course.done ? "Undo" : "Mark Completed"}</button>
                                 </td>
                             </tr>
