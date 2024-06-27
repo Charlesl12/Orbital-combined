@@ -111,7 +111,7 @@ router.post("/login", validCredentials, async (request, response) => {
 });
 
 // Verification
-router.get("/verify", authorization, async (request, response) => {
+router.post("/verify", authorization, async (request, response) => {
     try {
         response.json(true);
     } catch (err) {
