@@ -10,9 +10,10 @@ export default function Homepage({ setAut }) {
 
     async function getName() {
         try {
+            const jwt = localStorage.getItem("jwt_token");
             const response = await fetch("https://orbital-server-u1ma.onrender.com/homepage", {
-                method: "GET",
-                headers: { token: localStorage.token }
+                method: "POST",
+                headers: { "jwt_token": jwt }
             });
 
             const parseRes = await response.json();

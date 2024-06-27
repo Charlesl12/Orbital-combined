@@ -16,9 +16,10 @@ function App() {
 
   const checkAuth = async () => {
     try {
+        const jwt = localStorage.getItem("jwt_token");
         const response = await fetch("https://orbital-server-u1ma.onrender.com/auth/verify", {
         method: "POST",
-        headers: { jwt_token: localStorage.token}
+        headers: { "jwt_token": jwt }
     });
 
     const parseRes = await response.json();
