@@ -10,7 +10,7 @@ router.post("/", authorization, async (request, response) => {
         const { data: user, error } = await supabase
         .from('users')
         .select('user_name')
-        .eq('user_id', request.user.id)
+        .eq('user_id', request.user_id)
         .single();
   
         if (error) {
