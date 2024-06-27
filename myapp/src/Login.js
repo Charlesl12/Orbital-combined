@@ -31,7 +31,7 @@ export default function Login({setAut}) {
             const parseRes = await response.json();
             
             if (parseRes.jwtToken) {
-                localStorage.setItem("jwt_token", parseRes.jwtToken);
+                localStorage.setItem("jwtToken", parseRes.jwtToken);
                 setAut(true);
                 toast.success("Login succesfully");
             } else {
