@@ -10,14 +10,14 @@ export default function Homepage({ setAut }) {
 
     async function getName() {
         try {
-            const response = await fetch("https://orbital-server-u1ma.onrender.com/homepage", {
-                method: "GET",
+            const response = await fetch("https://orbital-server-u1ma.onrender.com/homepage/", {
+                method: "POST",
                 headers: { "jwtToken": localStorage.jwtToken }
             });
 
             const parseRes = await response.json();
+            setName(parseRes.user_name);    
 
-            setName(parseRes.user_name);
         } catch (err) {
             console.error(err.message);
         }
