@@ -19,7 +19,7 @@ export default function Login({setAut}) {
     const onSubmitForm = async(e) => {
         e.preventDefault();
         try{
-            const response = await fetch("https://orbital-server-u1ma.onrender.com/auth/login", 
+            const response = await fetch("https://orbital-combined-server.onrender.com/auth/login", 
             {
                 method:"POST",
                 headers: {"Content-Type": "application/json"},

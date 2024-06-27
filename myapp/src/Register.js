@@ -20,7 +20,7 @@ export default function Register({setAut}) {
     const onSubmitForm = async e => {
         e.preventDefault();
         try{
-            const response = await fetch("https://orbital-server-u1ma.onrender.com/auth/register", {
+            const response = await fetch("https://orbital-combined-server.onrender.com/auth/register", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({

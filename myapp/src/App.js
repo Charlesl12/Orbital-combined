@@ -16,7 +16,7 @@ function App() {
 
   const checkAuth = async () => {
     try {
-        const response = await fetch("https://orbital-server-u1ma.onrender.com/auth/verify", {
+        const response = await fetch("https://orbital-combined-server.onrender.com/auth/verify", {
         method: "POST",
         headers: { "jwtToken": localStorage.jwtToken }
     });
