@@ -18,6 +18,10 @@ app.listen(3000, () => {
     console.log(`server is running on port 3000`);
 });
 
+app.get('/', async (req, res) => {
+    res.send("Working");
+});
+
 app.get('/test-supabase', async (req, res) => {
     try {
         const { data, error } = await supabase
