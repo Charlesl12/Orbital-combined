@@ -11,6 +11,7 @@ router.post("/", authorization, async (request, response) => {
         .from('users')
         .select('user_name')
         .eq('user_id', request.user.id);
+        // .single();
   
         if (error) {
             throw error;
