@@ -17,7 +17,7 @@ export default function ChatBot() {
         setResponse("");
 
         try {
-            const res = await fetch("http://localhost:5001/recommend", {
+            const res = await fetch("https://orbital-combined-chatbot.onrender.com/recommend", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
