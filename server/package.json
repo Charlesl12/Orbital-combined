@@ -11,12 +11,16 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@pinecone-database/pinecone": "^2.2.2",
     "@supabase/supabase-js": "^2.43.5",
+    "ai": "^3.2.16",
+    "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
+    "openai": "^4.52.3",
     "pg": "^8.11.5"
   }
 }

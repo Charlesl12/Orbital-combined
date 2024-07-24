@@ -4,6 +4,7 @@ import "../Homepage.css";
 import Accordion from "./Accodion"; 
 import cs from "./cs.png";
 import bza from "./bza.png";
+import Sidebar from "./Sidebar";
 
 const accordionData = [
     {
@@ -79,20 +80,7 @@ export default function Roadmap() {
     return(   
         <>
             <div className="container">
-                <div className="sidebar">
-                    <div className="list-group">
-                        <Link to="/homepage/coursetracker" className="list-group-item list-group-item-action">
-                            Course Tracker
-                        </Link>
-                        <Link to="/homepage/suggestedroadmap" className="list-group-item list-group-item-action">
-                            Suggested Roadmap
-                        </Link>
-                        <Link to="/homepage/usefullinks" className="list-group-item list-group-item-action">
-                            Useful Links
-                        </Link>
-                    </div>
-                </div>
-
+                <Sidebar />
                 <div className="content">
                     <Accordion data={accordionData} />  
                 </div>

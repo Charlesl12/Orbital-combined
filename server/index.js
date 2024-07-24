@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
     res.send('testing');
 });
 
-app.get('/test-supabase', async (req, res) => {
+app.get('/users-supabase', async (req, res) => {
     try {
         const { data, error } = await supabase
         .from('users')

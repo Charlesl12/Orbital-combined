@@ -9,6 +9,7 @@ import Login from "./Login";
 import GradTracker from "./Homepage/GradTracker";
 import Roadmap from "./Homepage/Roadmap";
 import UsefulLinks from "./Homepage/UsefulLink";
+import Recommendation from "./Homepage/Recommendation";
 
 function App() {
 
@@ -98,6 +99,7 @@ function App() {
             <Route path="homepage/coursetracker" element={<GradTracker />} />
             <Route path="homepage/suggestedroadmap" element={<Roadmap />} />
             <Route path="homepage/usefullinks" element={<UsefulLinks />} />
+            <Route path="homepage/recommendation" element={<Recommendation />} />
           </Routes>
       </div>
     </>

@@ -42,6 +42,9 @@ export default function Homepage({ setAut }) {
                         <Link to="/homepage/usefullinks" className="list-group-item list-group-item-action">
                             Useful Links
                         </Link>
+                        <Link to="/homepage/recommendation" className="list-group-item list-group-item-action">
+                            Recommendation
+                        </Link>
                     </div>
                 </div>
 
