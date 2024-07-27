@@ -49,7 +49,7 @@ export default function Homepage({ setAut }) {
                 </div>
 
                 <div className="content" style={{textAlign: 'center'}}>
-                    <h2>Welcome!</h2>
+                    <h2>Welcome! {name}</h2>
                     <p>Course Tracker - To keep track of your modules left</p>
                     <p>Suggested Roadmap - Give a general idea on how to clear your modules during university</p>
                     <p>Useful Links - Links to various websites that are important for SOC students</p>
