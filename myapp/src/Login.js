@@ -63,7 +63,7 @@ export default function Login({setAut}) {
                 value={password}
                 onChange={e => onChange(e)}
             />
-            <button className ="btn btn-success btn-block">
+            <button type="submit" className ="btn btn-success btn-block">
                 Submit</button>
         </form>
         <Link to = "/register">Register</Link>
